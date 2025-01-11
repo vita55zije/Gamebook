@@ -1,0 +1,69 @@
+@layer reset, init, design;
+
+@import url(normalize.css) layer(reset);
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap');
+
+
+@layer init{
+    :root{
+
+    }
+    html{
+        font-family: "IM Fell English", serif;
+        font-weight: 400;
+        font-style: normal;
+        scroll-behavior: smooth;
+        overscroll-behavior: none;
+    }
+}
+
+@layer design{
+    .page{
+        background-image: url(/images/velen.avif);
+        height: 100vh;
+        background-position:center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4rem;
+    }
+    .page__title{
+        font-size: 2rem;
+        padding: 1.2rem;
+        margin: 4rem 0 0 0;
+        color: black;
+        text-align: center;
+    }
+    .page__content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 60%;
+        margin: 0;
+    }
+    .page__text{
+        font-size: 1.5rem;
+        padding: 1.2rem;
+        margin: 0 1rem;
+        border-radius: 1rem;
+        color: black;
+        background-color: antiquewhite;
+        opacity: 0.8;
+    }
+
+    .button{
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        background-color: red;
+        text-decoration: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+    .button a{
+        color: black;
+        font-weight: 700;
+    }
+}
