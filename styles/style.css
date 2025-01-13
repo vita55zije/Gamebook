@@ -20,7 +20,7 @@
 @layer design{
     .page{
         background-image: url(./images/velen.avif);
-        height: 100vh;
+        height: 100dvh;
         background-position:center;
         background-size: cover;
         background-repeat: no-repeat;
