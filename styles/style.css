@@ -6,7 +6,8 @@
 
 @layer init{
     :root{
-        --primary: red;
+        --primary: antiquewhite;
+        --secondary: red;
     }
     html{
         font-family: "IM Fell English", serif;
@@ -18,69 +19,109 @@
 }
 
 @layer design{
+    .img-responsive{
+        width: 100%;
+        height: auto;
+        display: block;
+        margin : 0 auto;
+    }
     .page{
-        background-image: url(./images/velen.avif);
-        height: 100dvh;
+        background-image: url(../images/velen.avif);
         background-position:center;
         background-size: cover;
         background-repeat: no-repeat;
+        text-align: center;
+        min-height: 100vh; /* Fallback for mobile browsers, svh not suported on some. */
+        min-height: 100svh;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        gap: 8rem;
+        justify-content: center;
     }
     .page__title{
         font-size: 2rem;
         padding: 1.2rem;
-        margin: 4rem 0 0 0;
         color: black;
         text-align: center;
     }
     .page__content{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        /* justify-content: space-between; */
         height: 60%;
-        gap: 8rem;
-        margin: 0;
     }
     .page__text{
         font-size: 1.5rem;
         padding: 1.2rem;
-        margin: 0 1rem;
         border-radius: 1rem;
         text-align: center;
         color: black;
         background-color: antiquewhite;
-        opacity: 0.8;
+        margin: 0 1rem 2rem;
     }
-
+    .text--game{
+        background-color: transparent;
+        margin: 0;
+    }
     .button{
-        padding: 0.5rem 1rem;
+        padding: 1rem 2rem;
         border-radius: 50rem;
-        background-color: var(--primary);
+        background-color: var(--secondary, red);
         text-decoration: none;
         font-size: 1.5rem;
         cursor: pointer;
-        margin: 0 1rem;
     }
     .button a{
         color: black;
         font-weight: 700;
+    }
+    .button:hover{
+        background-color: var(--secondary, red);
+
     }
     .button--game a{
         text-decoration: none;
         font-weight: 600;
     }
     .button--game{
+        padding: .5rem 1rem;
+        margin: .5rem 1rem;
+        width: 80%;
         background-color: #C89E75;
         border: 4px solid #7e6955;
     }
-    .page__choices{
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
     
+    .page__container{
+        background-color: var(--primary, antiquewhite);
+        margin: 0 1rem;
+        border-radius: 2rem;
+        overflow: hidden;
+    }
+    #randomNumberDisplay{
+        font-size: 2rem;
+        padding: 1.2rem;
+        font-weight: 900;
+        color: white;
+        text-align: center;
+    }
+    @media screen and (min-width: 960px){
+        .page__title{
+            font-size: 3rem;
+        }
+        .page__content{
+            display: flex;
+            align-items: center;
+        }
+        .content--start{
+            flex-direction: column;
+        }
+        .button--game a{
+            font-size: 1.8rem;
+        }
+        /* .button--game{
+            width: 80%;
+        } */
+        .page__container{
+            flex-basis: 60%
+        }
+        .container--end{
+            margin: 0 auto;
+        }
     }
 }
