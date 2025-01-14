@@ -33,9 +33,7 @@
         text-align: center;
         min-height: 100vh; /* Fallback for mobile browsers, svh not suported on some. */
         min-height: 100svh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        align-content: center;
     }
     .page__title{
         font-size: 2rem;
@@ -105,7 +103,8 @@
             font-size: 3rem;
         }
         .page__content{
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             align-items: center;
         }
         .content--start{
@@ -118,7 +117,10 @@
             width: 80%;
         } */
         .page__container{
-            flex-basis: 60%
+           flex-basis: 50%; 
+        }
+        .page__choices{
+            flex-basis: 50%;
         }
         .container--end{
             margin: 0 auto;
